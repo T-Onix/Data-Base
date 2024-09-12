@@ -4,11 +4,21 @@ from os import getcwd , system , name
 import linecache
 import ctypes
 import banner
+from time import sleep
 #=========================================================================================
-if name == "nt":
-    system("cls")
-else:
-    system("clear")
+def clear():
+    if name == "nt":
+        system("cls")
+    else:
+        system("clear")
+
+clear()
+#=========================================================================================
+def Sprint(text):
+  for character in text:
+    sys.stdout.write(character)
+    sys.stdout.flush()
+    sleep(0.5)
 #=========================================================================================
 path = getcwd()
 test = ctypes.CDLL(f"{path}/data_base")
@@ -66,13 +76,19 @@ elif ask == "f" or ask == "F":
 
     if f"Password : {pwd}" in r_file:
         print(Fore.GREEN + "\nlogin succes".title() + RESET)
+        sleep(0.5)
+        print(Fore.YELLOW + "\nYou will redirect to User Pannel in 3 min...".title() + RESET)
         pass
     else:
         exit(Fore.RED + "\nlogin failure".title() + RESET)
 
-#=========================================================================================
+# After login =========================================================================================
 
-    #Banner here 'user panel'
+    Sprint(Fore.LIGHTWHITE_EX + "1..2..3" + RESET)
+
+    clear()
+
+    banner.User_banner()
 
     print(f"""\n\n{Fore.RED}[{Fore.GREEN}1{Fore.RED}] {Fore.LIGHTWHITE_EX}Edit user info  {Fore.RED}[{Fore.GREEN}2{Fore.RED}]{Fore.LIGHTWHITE_EX} Remove user
 
