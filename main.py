@@ -1,10 +1,9 @@
 import sys ; sys.dont_write_bytecode = True
 from colorama import Fore , init ; init()
 from os import getcwd , system , name
-import linecache
+from time import sleep
 import ctypes
 import banner
-from time import sleep
 #=========================================================================================
 def clear():
     if name == "nt":
@@ -121,17 +120,21 @@ elif ask == "f" or ask == "F":
                     edit.seek(u)
                     edit.write("hello" + read)
         case 2:
-            print("working...")
+            exit("working...")
         case 3:
+            exit("working...")
             pass
         case 4:
+            exit("working...")
             pass
         case 5:
+            exit("working...")
             pass
         case 0 :
             exit(f"""{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
         case _:
-            exit(Fore.RED + "No such option !".title() + RESET)
+            exit(f"""{Fore.YELLOW}│
+╰┈➤{Fore.RED}[-]{Fore.BLUE} No Such Option !""")
 #=========================================================================================
     file.close()
