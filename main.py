@@ -18,7 +18,7 @@ def Sprint(text):
   for character in text:
     sys.stdout.write(character)
     sys.stdout.flush()
-    sleep(0.5)
+    sleep(0.3)
 #=========================================================================================
 path = getcwd()
 test = ctypes.CDLL(f"{path}/data_base")
@@ -29,7 +29,7 @@ RESET = (Fore.RESET)
 banner.banner()
 #=========================================================================================  
 try:
-    ask = input(f"{Fore.MAGENTA}Want to find User or create {Fore.GREEN}(F/C): " + RESET)
+    ask = input(f"{Fore.MAGENTA}Want to find User or create {Fore.GREEN}(F/C) : " + RESET)
 except KeyboardInterrupt:
     exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
@@ -58,7 +58,7 @@ elif ask == "f" or ask == "F":
     if f"Username : {U_name}" in r_file:
         print(Fore.GREEN + "\nUser found" + RESET)
 
-
+        # find line
         with open("User.txt") as myFile:
             for num, line in enumerate(myFile, 1):
                 if U_name in line:
@@ -76,23 +76,25 @@ elif ask == "f" or ask == "F":
 
     if f"Password : {pwd}" in r_file:
         print(Fore.GREEN + "\nlogin succes".title() + RESET)
-        sleep(0.5)
-        print(Fore.YELLOW + "\nYou will redirect to User Pannel in 3 min...".title() + RESET)
+        sleep(0.4)
+        print(Fore.YELLOW + "\nYou will redirect to User Pannel in 5 sec...".title() + RESET)
         pass
     else:
         exit(Fore.RED + "\nlogin failure".title() + RESET)
 
 # After login =========================================================================================
 
-    Sprint(Fore.LIGHTWHITE_EX + "1..2..3" + RESET)
+    Sprint(Fore.LIGHTWHITE_EX + "\n1..2..3" + RESET)
 
     clear()
 
     banner.User_banner()
 
-    print(f"""\n\n{Fore.RED}[{Fore.GREEN}1{Fore.RED}] {Fore.LIGHTWHITE_EX}Edit user info  {Fore.RED}[{Fore.GREEN}2{Fore.RED}]{Fore.LIGHTWHITE_EX} Remove user
+    print(f"""\n{Fore.RED}[{Fore.GREEN}1{Fore.RED}] {Fore.LIGHTWHITE_EX}Edit user info  {Fore.RED}[{Fore.GREEN}2{Fore.RED}]{Fore.LIGHTWHITE_EX} Remove user
 
 {Fore.RED}[{Fore.GREEN}3{Fore.RED}] {Fore.LIGHTWHITE_EX}Improve rank  {Fore.RED}[{Fore.GREEN}4{Fore.RED}] {Fore.LIGHTWHITE_EX}Improve rating
+
+{Fore.RED}[{Fore.GREEN}5{Fore.RED}] {Fore.LIGHTWHITE_EX}Make draw
 
 {Fore.RED}[{Fore.GREEN}0{Fore.RED}] {Fore.LIGHTWHITE_EX}Exit 
 """)
@@ -105,12 +107,26 @@ elif ask == "f" or ask == "F":
     
     match(choose):
         case 1:
-            pass
+            
+            
+            print("""[1] Address [2] phone number""")
+
+            l = input("what do you want to change : ")
+            if l == "1":
+
+                print(user_line)
+                u = user_line + 4 
+                with open("User.txt" , "r") as edit:
+                    read = edit.read()
+                    edit.seek(u)
+                    edit.write("hello" + read)
         case 2:
             print("working...")
         case 3:
             pass
         case 4:
+            pass
+        case 5:
             pass
         case 0 :
             exit(f"""{Fore.YELLOW}│

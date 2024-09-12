@@ -96,7 +96,7 @@ int main(){
         
         fprintf(file , "\n=====================================================\n");
         fprintf(file , "Username : %s" , name);
-        fprintf(file , "\nLast name : %s" , l_name);
+        fprintf(file , "Last name : %s" , l_name);
         fprintf(file , "Age : %d" , age);
         fprintf(file , "\nNumber : %d" , number);
         fprintf(file , "\nAddress : %s" , loc);
