@@ -111,7 +111,7 @@ elif ask == "f" or ask == "F":
             
             print("""[1] Address [2] phone number""")
 
-            l = input("what do you want to change : ")
+            l = input("what do you want to change (will be complete...): ")
             if l == "1":
 
                 print(user_line)
