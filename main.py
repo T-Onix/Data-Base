@@ -28,7 +28,7 @@ RESET = (Fore.RESET)
 banner.banner()
 #=========================================================================================  
 try:
-    ask = input(f"{Fore.MAGENTA}Want to find User or create {Fore.GREEN}(F/C) : " + RESET)
+    ask = input(f"{Fore.MAGENTA}Want to [F]ind User or [C]reate {Fore.GREEN}(F/C) : " + RESET)
 except KeyboardInterrupt:
     exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
@@ -50,9 +50,9 @@ elif ask == "f" or ask == "F":
     if U_name == "\n" or U_name == "":
         exit(Fore.RED + "Username cant be empty !" + RESET)
     else:
-        pass
+        pass 
 #=========================================================================================
-    r_file = file.read()
+    r_file = file.read()    
 #=========================================================================================
     if f"Username : {U_name}" in r_file:
         print(Fore.GREEN + "\nUser found" + RESET)
@@ -71,7 +71,7 @@ elif ask == "f" or ask == "F":
     if pwd == "\n" or pwd == "":
         exit(Fore.RED + "password cant be empty !" + RESET)
     else:
-        pass
+        pass 
 
     if f"Password : {pwd}" in r_file:
         print(Fore.GREEN + "\nlogin succes".title() + RESET)
@@ -87,7 +87,7 @@ elif ask == "f" or ask == "F":
 
     clear()
 
-    banner.User_banner()
+    banner.User_banner() 
 
     print(f"""\n{Fore.RED}[{Fore.GREEN}1{Fore.RED}] {Fore.LIGHTWHITE_EX}Edit user info  {Fore.RED}[{Fore.GREEN}2{Fore.RED}]{Fore.LIGHTWHITE_EX} Remove user
 
@@ -104,12 +104,12 @@ elif ask == "f" or ask == "F":
         exit(f"""\n{Fore.YELLOW}│
 ╰┈➤{Fore.RED}[-]{Fore.BLUE} User Exited :)""")
     
-    match(choose):
-        case 1:
+    match(choose): 
+        case 1: 
             
             print("""[1] Address [2] phone number""")
 
-            l = input("what do you want to change (will be complete...): ")
+            l = input("what do you want to change (will be complete...) : ")
             if l == "1":
 
                 print(user_line)
@@ -121,6 +121,13 @@ elif ask == "f" or ask == "F":
 
 
         case 2:
+            with open("User.txt", "r+") as f:
+                d = f.readlines()
+                f.seek(0)
+                for i in d:
+                    if i != "2  ":
+                        f.write(i)
+                f.truncate()
             exit("working...")
         case 3:
             exit("working...")
