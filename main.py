@@ -118,7 +118,7 @@ elif ask == "f" or ask == "F":
                     read = edit.read()
                     edit.seek(u)
                     edit.write("hello" + read)
-
+                    #FIXME
 
         case 2:
             with open("User.txt", "r+") as f:
@@ -129,6 +129,7 @@ elif ask == "f" or ask == "F":
                         f.write(i)
                 f.truncate()
             exit("working...")
+            #FIXME
         case 3:
             exit("working...")
             pass
