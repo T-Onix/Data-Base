@@ -107,7 +107,6 @@ elif ask == "f" or ask == "F":
     match(choose):
         case 1:
             
-            
             print("""[1] Address [2] phone number""")
 
             l = input("what do you want to change (will be complete...): ")
@@ -119,6 +118,8 @@ elif ask == "f" or ask == "F":
                     read = edit.read()
                     edit.seek(u)
                     edit.write("hello" + read)
+
+
         case 2:
             exit("working...")
         case 3:
