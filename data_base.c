@@ -60,35 +60,35 @@ int main(){
 
     // if (ask == 'c'){
 
-    printf("\n\nEnter user name : ");
+    printf(GREEN "\n\nEnter user name : " RESET);
     fgets(name , sizeof(name) , stdin);
 
-    printf("\nEnter last name : ");
+    printf(GREEN "\nEnter last name : " RESET);
     fgets(l_name , sizeof(l_name) , stdin);
     
-    printf("\nEnter User age : ");
+    printf(GREEN "\nEnter User age : " RESET);
     scanf("%d" , &age);
 
-    printf("\nEnter User phone number : ");
+    printf(GREEN "\nEnter User phone number : " RESET);
     scanf("%d" , &number);
     
     while (getchar() != '\n')
     printf("");
 
-    printf("\nEnter User address : ");
+    printf(GREEN "\nEnter User address : " RESET);
     fgets(loc , sizeof(loc) , stdin);
     
-    printf("\nEnter User pass : ");
+    printf(GREEN "\nEnter User pass : " RESET);
     scanf("%s" , &pass);
 
-    printf("\n==========================================");
+    printf(RED "\n==========================================" RESET);
     printf("\nYou entered for user name is >> %sYou entered for last name is >> %sUser pass is >> %s" , name ,l_name , pass);    
-    printf("\n==========================================");
+    printf(RED "\n==========================================" RESET);
 
     while (getchar  () != '\n')
     printf("");
     
-    printf("\n\nWant to save it (y/n) : ");
+    printf(YELLOW "\n\nWant to save it (y/n) : "  RESET);
     bul = getchar();    
 
     if(bul == 'y' | bul == 'Y'){
